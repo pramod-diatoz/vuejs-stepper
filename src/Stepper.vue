@@ -1,8 +1,9 @@
 <template>
     <div class="stepper">
         <div class="top">
-            <div v-for="(item, index) in options.headers" :class="{'step-header': true, 'active': index <= currentPosition,
-          'start': index === 0, 'end': index === options.headers.length}">
+            <div v-for="(item, index) in options.headers" :class="{
+            'step-header': true, 'active': index <= currentPosition, 'error': item.error,
+          'start': index === 0, 'end': index === options.headers.length}"  @click="getIndex(index)">
                 <div class="header-indicator">
                     <div class="step-header-line" v-if="index > 0">
 
@@ -21,7 +22,7 @@
             <transition-group :name="transitionType" class="body" mode="out-in" >
                 <div v-for="(item, index) in options.headers" :key="'step' + index" v-show="currentPosition === index"
                      :class="{'steps-item':true}">
-                    <slot :name="'step-' + (index+1)"></slot>
+                    <slot :name="item.stepName ? item.stepName : 'step-' + (index+1)"></slot>
                 </div>
             </transition-group>
         </div>
@@ -63,6 +64,9 @@
           this.transitionType = 'stepper-slide-1'
         }
         this.currentPosition = index;
+      },
+      getIndex(index){
+        this.$emit("getStepperCurrentIndex",index)
       }
     }
   }
