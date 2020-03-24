@@ -16,7 +16,6 @@
   },
   "description": "Simple stepper component for vuejs",
   "main": "src/index.js",
-
   "dependencies": {
     "vue": "^2.3.3"
   },
@@ -58,6 +57,10 @@
     "not ie <= 8"
   ],
   "keywords": [
-    "Vue Stepper", "Stepper", "Vue", "Vuejs", "Steps"
+    "Vue Stepper",
+    "Stepper",
+    "Vue",
+    "Vuejs",
+    "Steps"
   ]
 }
