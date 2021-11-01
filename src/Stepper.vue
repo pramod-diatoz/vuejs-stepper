@@ -8,8 +8,8 @@
                     <div class="step-header-line" v-if="index > 0">
 
                     </div>
-                    <div class="step-header-content" @click="slideTo(index)">
-                        {{index+1}}
+                    <div :class="['step-header-content', {'one': index == 0}, {'two': index == 1}, {'three': index == 2}, {'four': index == 3}]" style="position:relative" @click="slideTo(index)">
+                        <!-- {{index+1}} -->
                     </div>
                 </div>
                 <div class="title" :class="{'title': true, }">
