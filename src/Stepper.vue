@@ -57,7 +57,7 @@
         }
       },
       slideTo (index) {
-        if(this.currentPosition <= index) return
+        if(this.currentPosition == index) return
         if(this.currentPosition > index){
           this.transitionType = 'stepper-slide-2'
         } else {
