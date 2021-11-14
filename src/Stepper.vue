@@ -8,7 +8,7 @@
                     <div class="step-header-line" v-if="index > 0">
 
                     </div>
-                    <div :class="['step-header-content', {'one': index == 0}, {'two': index == 1}, {'three': index == 2}, {'four': index == 3}]" style="position:relative" @click="slideTo(index)">
+                    <div :class="['step-header-content', {'one': index == 0}, {'two': index == 1}, {'three': index == 2}, {'four': index == 3}, {'current': index == currentPosition}, {'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}]" style="position:relative" @click="slideTo(index)">
                         <!-- {{index+1}} -->
                     </div>
                 </div>
