@@ -57,13 +57,41 @@
         }
       },
       slideTo (index) {
-        if(this.currentPosition == index) return
-        if(this.currentPosition > index){
-          this.transitionType = 'stepper-slide-2'
-        } else {
-          this.transitionType = 'stepper-slide-1'
+        // if(this.currentPosition == index) return
+        // if(this.currentPosition > index){
+        //   this.transitionType = 'stepper-slide-2'
+        // } else {
+        //   this.transitionType = 'stepper-slide-1'
+        // }
+        // this.currentPosition = index;
+
+        // Custom Code for the required stepper logic
+        switch (this.currentPosition) {
+          case 0:
+            return;
+            break;
+          case 1:
+            if(index == 0) {
+              this.transitionType = 'stepper-slide-2';
+              this.currentPosition = index;
+            } else {
+              return;
+            }
+            break;
+          case 2:
+            return;
+            break;
+          case 3:
+            if(index == 2) {
+              this.transitionType = 'stepper-slide-2';
+              this.currentPosition = index;
+            } else {
+              return;
+            }
+            break;
+          default:
+            break;
         }
-        this.currentPosition = index;
       },
       getIndex(index){
         this.$emit("getStepperCurrentIndex",index)
