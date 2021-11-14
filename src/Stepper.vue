@@ -12,7 +12,7 @@
                         <!-- {{index+1}} -->
                     </div>
                 </div>
-                <div class="title" :class="{'title': true, }">
+                <div class="title" :class="{'title': true, 'current': index == currentPosition, 'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}">
                     {{item.title}}
                 </div>
             </div>
