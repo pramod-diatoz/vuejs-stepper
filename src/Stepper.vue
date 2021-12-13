@@ -1,5 +1,5 @@
 <template>
-    <div class="stepper">
+    <div class="stepper-p">
         <div class="top-p">
             <div v-for="(item, index) in options.headers" :class="{
             'step-header-p': true, 'active': index <= currentPosition, 'error': item.error,
