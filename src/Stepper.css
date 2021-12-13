@@ -1,4 +1,4 @@
-.top{
+.top-p{
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -6,26 +6,26 @@
     width: 100%;
     justify-content: center;
 }
-.step-header{
+.step-header-p{
     display: flex;
     flex-direction: column;
 }
-.header-indicator{
+.header-indicator-p{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-.step-header.start > .header-indicator{
+.step-header-p.start > .header-indicator-p{
     align-self: flex-end;
 }
-.step-header-line{
+.step-header-line-p{
     display: inline-flex;
     width: 100px;
     height: 3px;
     background-color: grey;
 }
-.step-header-content{
+.step-header-content-p{
     display: inline-flex;
     width: 60px;
     height: 60px;
@@ -36,11 +36,11 @@
     justify-content: center;
     cursor: pointer;
 }
-.step-header.active .step-header-content,
-.step-header.active .step-header-line {
+.step-header-p.active .step-header-content-p,
+.step-header-p.active .step-header-line-p {
     background-color: rebeccapurple;
 }
-.title{
+.title-p{
     display: inline-flex;
     align-self: flex-end;
     text-transform: capitalize;
@@ -49,11 +49,11 @@
     right: -10%;
     justify-content: center;
 }
-.step-header.start > .title{
+.step-header-p.start > .title-p{
     right: -35%;
 }
 
-.steps-item{
+.steps-item-p{
     min-width: 100%;
 }
 .body{
@@ -79,7 +79,7 @@ button{
     outline: 0;
     border-radius: 5px;
 }
-.stepper{
+.stepper-p{
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,18 +1,18 @@
 <template>
     <div class="stepper">
-        <div class="top">
+        <div class="top-p">
             <div v-for="(item, index) in options.headers" :class="{
-            'step-header': true, 'active': index <= currentPosition, 'error': item.error,
+            'step-header-p': true, 'active': index <= currentPosition, 'error': item.error,
           'start': index === 0, 'end': index === options.headers.length}"  @click="getIndex(index)">
-                <div class="header-indicator">
-                    <div class="step-header-line" v-if="index > 0">
+                <div class="header-indicator-p">
+                    <div class="step-header-line-p" v-if="index > 0">
 
                     </div>
-                    <div :class="['step-header-content', {'one': index == 0}, {'two': index == 1}, {'three': index == 2}, {'four': index == 3}, {'current': index == currentPosition}, {'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}]" style="position:relative" @click="slideTo(index)">
+                    <div :class="['step-header-content-p', {'one': index == 0}, {'two': index == 1}, {'three': index == 2}, {'four': index == 3}, {'current': index == currentPosition}, {'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}]" style="position:relative" @click="slideTo(index)">
                         <!-- {{index+1}} -->
                     </div>
                 </div>
-                <div class="title" :class="{'title': true, 'current': index == currentPosition, 'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}">
+                <div class="title-p" :class="{'title-p': true, 'current': index == currentPosition, 'disabled': (index == 0 || index == 1) && (currentPosition == 2 || currentPosition == 3)}">
                     {{item.title}}
                 </div>
             </div>
@@ -21,7 +21,7 @@
         <div style="width:100%">
             <transition-group :name="transitionType" class="body" mode="out-in" >
                 <div v-for="(item, index) in options.headers" :key="'step' + index" v-show="currentPosition === index"
-                     :class="{'steps-item':true}">
+                     :class="{'steps-item-p':true}">
                     <slot :name="item.stepName ? item.stepName : 'step-' + (index+1)"></slot>
                 </div>
             </transition-group>
